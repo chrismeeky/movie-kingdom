@@ -7,6 +7,7 @@ function App() {
   const theme = {
     colorPrimary: "#39445a",
     colorGray: "#d1d1d1",
+    colorGrayDark: "#8f8d8d",
   };
 
   return (

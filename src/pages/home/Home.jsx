@@ -8,36 +8,35 @@ const movies = [
     date: "11/5/2005",
     poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
     mediaType: "Movies",
+    voteCount: 250,
   },
   {
     title: "The crimer",
     date: "11/5/2005",
     poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
     mediaType: "Movies",
+    voteCount: 250,
   },
   {
     title: "The crimer",
     date: "11/5/2005",
     poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
     mediaType: "Movies",
+    voteCount: 250,
   },
   {
     title: "The crimer",
     date: "11/5/2005",
     poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
     mediaType: "Movies",
+    voteCount: 250,
   },
   {
     title: "The crimer",
     date: "11/5/2005",
     poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
     mediaType: "Movies",
-  },
-  {
-    title: "The crimer",
-    date: "11/5/2005",
-    poster: "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-    mediaType: "Movies",
+    voteCount: 250,
   },
 ];
 
