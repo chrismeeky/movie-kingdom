@@ -9,9 +9,9 @@ import Movies from "../../components/Movies";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const { data = [], isLoading } = useFetchMoviesQuery(pageNumber);
-
-  console.log("all movies", data);
+  const { data = { results: [] }, isFetching } = useFetchMoviesQuery(
+    pageNumber
+  );
 
   const handlePageChange = (page) => {
     setPageNumber(page);
@@ -29,18 +29,15 @@ const Home = () => {
       <StyledMoviesSection id="movies">
         <h2>Trending Today</h2>
 
-        {!isLoading && (
-          <>
-            <Movies movieList={data.results} />
-            <Pagination
-              currentPage={data.page}
-              totalSize={data.total_pages}
-              sizePerPage={10}
-              changeCurrentPage={handlePageChange}
-              theme="bootstrap"
-            />
-          </>
-        )}
+        <Movies movieList={data.results} isLoading={isFetching} />
+
+        <Pagination
+          currentPage={data.page}
+          totalSize={data.total_pages}
+          sizePerPage={10}
+          changeCurrentPage={handlePageChange}
+          theme="bootstrap"
+        />
       </StyledMoviesSection>
     </HomeLayout>
   );

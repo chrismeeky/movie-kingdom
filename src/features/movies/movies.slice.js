@@ -5,52 +5,18 @@ import { createSelector } from "reselect";
 const moviesSlice = createSlice({
   name: "movies",
   initialState: {
-    list: [
-      {
-        title: "The crimer",
-        date: "11/5/2005",
-        poster:
-          "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-        mediaType: "Movies",
-        voteCount: 250,
-      },
-      {
-        title: "The crimer",
-        date: "11/5/2005",
-        poster:
-          "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-        mediaType: "Movies",
-        voteCount: 250,
-      },
-      {
-        title: "The crimer",
-        date: "11/5/2005",
-        poster:
-          "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-        mediaType: "Movies",
-        voteCount: 250,
-      },
-      {
-        title: "The crimer",
-        date: "11/5/2005",
-        poster:
-          "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-        mediaType: "Movies",
-        voteCount: 250,
-      },
-      {
-        title: "The crimer",
-        date: "11/5/2005",
-        poster:
-          "https://image.tmdb.org/t/p/w200/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
-        mediaType: "Movies",
-        voteCount: 250,
-      },
-    ],
+    favorited: [],
     loading: false,
   },
 
-  reducers: {},
+  reducers: {
+    favoriteAdded: (state, action) => {
+      const { payload } = action;
+      if (!state.favorited.includes(payload)) {
+        state.favorited.push(payload);
+      } else state.favorited = state.favorited.filter((id) => id !== payload);
+    },
+  },
 });
 
 export const getAllMovies = createSelector(
@@ -67,15 +33,14 @@ export const movieApiSlice = createApi({
     return {
       fetchMovies: builder.query({
         query: (page = 1) => {
-          return `/trending/all/day?api_key=b2bef1c63f518439531b3bbf59170393&page=${page}`;
+          return `/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`;
         },
       }),
     };
   },
 });
 
-
-
+console.log("process", process.env);
 export default moviesSlice.reducer;
-export const {} = moviesSlice.actions;
+export const { favoriteAdded } = moviesSlice.actions;
 export const { useFetchMoviesQuery } = movieApiSlice;

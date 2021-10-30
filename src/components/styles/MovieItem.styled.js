@@ -13,6 +13,10 @@ export const StyledMovieItem = styled.div`
   overflow: hidden;
   max-width: 30rem;
 
+  & img {
+    min-height: 50rem;
+  }
+
   & > h2 {
     align-self: center;
     color: ${({ theme }) => theme.colorGray};
