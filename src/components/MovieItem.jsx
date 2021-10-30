@@ -1,21 +1,34 @@
 import { StyledMovieItem } from "./styles/MovieItem.styled";
-import likeIcon from "../assets/svg/like-icon.svg";
 
 const MovieItem = ({
-  movie: { poster, title, mediaType, date, voteCount },
+  movie: {
+    poster_path,
+    title,
+    media_type,
+    release_date,
+    vote_count,
+    favorited,
+  },
 }) => {
   return (
-    <StyledMovieItem>
-      <img src={poster} alt="" />
+    <StyledMovieItem favorited={favorited}>
+      <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="" />
       <h2>{title}</h2>
       <div>
-        <span>{mediaType}</span>
-        <span>{date}</span>
+        <span>{media_type}</span>
+        <span>{release_date}</span>
       </div>
 
       <figure className="movie-options">
-        <span>{voteCount} votes</span>
-        <img src={likeIcon} alt="favorite" />
+        <span>{vote_count} votes</span>
+        <svg
+          version="1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 48 48"
+          enable-background="new 0 0 48 48"
+        >
+          <path d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z" />
+        </svg>
       </figure>
     </StyledMovieItem>
   );

@@ -11,11 +11,12 @@ export const StyledMovieItem = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  max-width: 30rem;
 
   & > h2 {
     align-self: center;
     color: ${({ theme }) => theme.colorGray};
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     font-weight: 400;
   }
 
@@ -23,7 +24,8 @@ export const StyledMovieItem = styled.div`
     display: flex;
     justify-content: space-between;
     color: ${({ theme }) => theme.colorGrayDark};
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
   }
 
   & > figure {
@@ -39,8 +41,9 @@ export const StyledMovieItem = styled.div`
     transition: all 0.3s;
     z-index: 10;
 
-    & img {
+    & svg {
       width: 12%;
+      fill: ${({ favorited }) => (favorited ? "#F44336" : "gray")};
 
       &:active {
         transform: scale(0.8);
