@@ -22,6 +22,7 @@ export const StyledMovieItem = styled.div`
     color: ${({ theme }) => theme.colorGray};
     margin: 1rem 0;
     font-weight: 400;
+    text-align: center;
   }
 
   & > div {
@@ -35,6 +36,7 @@ export const StyledMovieItem = styled.div`
   & > figure {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: -10rem;
     left: 0;
@@ -46,7 +48,7 @@ export const StyledMovieItem = styled.div`
     z-index: 10;
 
     & svg {
-      width: 12%;
+      width: 10%;
       fill: ${({ favorited }) => (favorited ? "#F44336" : "gray")};
 
       &:active {

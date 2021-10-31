@@ -1,11 +1,35 @@
-import { StyledTabs } from "./styles/Tabs.styled";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getActiveTab,
+  tabSelected,
+  getAllFavorited,
+} from "../features/movies/movies.slice";
+import { StyledTabs, StyledTab } from "./styles/Tabs.styled";
+import { tabs } from "../constants";
 
 const Tabs = () => {
+  const activeTab = useSelector(getActiveTab);
+  const favoritedMovies = useSelector(getAllFavorited);
+  const dispatch = useDispatch();
+
+  const handleTabClick = (tab) => {
+    dispatch(tabSelected(tab));
+  };
+
+  console.log("active tab", activeTab);
   return (
     <StyledTabs>
-      <div className="tab">Trending</div>
-      <div className="tab">Popular</div>
-      <div className="tab">My Favorites</div>
+      {tabs.map((tab, index) => (
+        <StyledTab
+          active={tab.name === activeTab.name}
+          key={index}
+          onClick={() => handleTabClick(tab)}
+        >
+          {tab.name === "My Movies"
+            ? `${tab.name} (${favoritedMovies.movies.length})`
+            : tab.name}
+        </StyledTab>
+      ))}
     </StyledTabs>
   );
 };

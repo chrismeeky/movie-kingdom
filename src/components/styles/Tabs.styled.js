@@ -5,12 +5,13 @@ export const StyledTabs = styled.div`
   bottom: 0;
   display: flex;
   font-size: 1.5rem;
+`;
 
-  & > div {
-    text-align: center;
-    padding: 0 2rem;
-    border-bottom: 2px solid red;
-    cursor: pointer;
-    color: white;
-  }
+export const StyledTab = styled.div`
+  text-align: center;
+  padding: 0 0 0.5rem 0;
+  border-bottom: 2px solid ${({ active }) => (active ? "white" : "gray")};
+  cursor: pointer;
+  color: white;
+  min-width: 15rem;
 `;
