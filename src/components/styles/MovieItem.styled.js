@@ -11,10 +11,11 @@ export const StyledMovieItem = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  max-width: 30rem;
+  max-width: 100%;
 
   & img {
-    min-height: 50rem;
+    min-height: 30vw;
+    width: 100%;
   }
 
   & > h2 {
@@ -23,6 +24,10 @@ export const StyledMovieItem = styled.div`
     margin: 1rem 0;
     font-weight: 400;
     text-align: center;
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.tablet}) {
+      font-size: 1.3rem;
+    }
   }
 
   & > div {
@@ -47,6 +52,12 @@ export const StyledMovieItem = styled.div`
     transition: all 0.3s;
     z-index: 10;
 
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+      position: unset;
+      box-shadow: none;
+      padding: 0.5rem;
+    }
+
     & svg {
       width: 10%;
       fill: ${({ favorited }) => (favorited ? "#F44336" : "gray")};
@@ -65,6 +76,9 @@ export const StyledMovieItem = styled.div`
 
   &:hover {
     background-color: white;
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+      background-color: #2a2c36;
+    }
 
     & > h2 {
       color: black;

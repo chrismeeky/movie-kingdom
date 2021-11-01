@@ -29,4 +29,25 @@ body {
   background:${({theme}) => theme.colorPrimary};
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ebe8e8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(116, 116, 116);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 `;

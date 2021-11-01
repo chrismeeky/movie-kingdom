@@ -14,4 +14,9 @@ export const StyledTab = styled.div`
   cursor: pointer;
   color: white;
   min-width: 15rem;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}) {
+    min-width: 30vw;
+    font-size: 1.2rem;
+  }
 `;

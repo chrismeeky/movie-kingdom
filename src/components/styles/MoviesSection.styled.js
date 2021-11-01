@@ -12,5 +12,9 @@ export const StyledMoviesSection = styled.div`
     text-transform: uppercase;
     color: ${({ theme }) => theme.colorGray};
     margin-top: 2rem;
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.tablet}) {
+      font-size: 2rem;
+    }
   }
 `;

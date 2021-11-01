@@ -37,6 +37,9 @@ export const StyledMovieDetailsOverlay = styled.div`
     flex-direction: column;
     width: 70vw;
     max-height: 95vh;
+    @media (max-width: ${({ theme }) => theme.breakPoints.mediumDesktop}) {
+      width: 90vw;
+    }
 
     &.show {
       opacity: 1;
@@ -68,6 +71,9 @@ export const StyledMovieDetailsOverlay = styled.div`
         & img {
           height: 100%;
         }
+        @media (max-width: ${({ theme }) => theme.breakPoints.tablet}) {
+          display: none;
+        }
       }
 
       & div:nth-child(2) {
@@ -79,9 +85,14 @@ export const StyledMovieDetailsOverlay = styled.div`
         max-height: 40rem;
         text-align: center;
         width: 100%;
+        margin-top: 5rem;
+        @media (max-width: ${({ theme }) => theme.breakPoints.tablet}) {
+          max-height: 100%;
+          padding-bottom: 5rem;
+        }
 
         & h1 {
-          margin: 4rem 0 1rem 0;
+          margin-bottom: 1rem;
         }
 
         & p {

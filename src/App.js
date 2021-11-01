@@ -10,6 +10,13 @@ function App() {
     colorPrimary: "#39445a",
     colorGray: "#d1d1d1",
     colorGrayDark: "#8f8d8d",
+
+    breakPoints: {
+      largeDesktop: "1100px",
+      mediumDesktop: "800px",
+      tablet: "650px",
+      mobile: "450px",
+    },
   };
 
   return (
