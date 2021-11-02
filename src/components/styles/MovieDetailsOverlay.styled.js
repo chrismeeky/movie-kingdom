@@ -26,7 +26,6 @@ export const StyledMovieDetailsOverlay = styled.div`
   z-index: 100;
 
   & > div {
-    position: relative;
     transform: scale(1);
     background-color: #fff;
     box-shadow: 0 1rem 4rem rgba(#000, 0.2);
@@ -37,11 +36,13 @@ export const StyledMovieDetailsOverlay = styled.div`
     flex-direction: column;
     width: 70vw;
     max-height: 95vh;
+    overflow-y: auto;
     @media (max-width: ${({ theme }) => theme.breakPoints.mediumDesktop}) {
       width: 90vw;
     }
 
     &.show {
+      position: relative;
       opacity: 1;
       transform: scale(1);
       font-weight: 0;
@@ -51,12 +52,14 @@ export const StyledMovieDetailsOverlay = styled.div`
     & i {
       position: absolute;
       right: 1rem;
-      top: 0rem;
-      transform: scale(0.8);
-      transition: all 0.3s;
-      font-size: 4rem;
-      font-weight: 600;
+      top: 2rem;
       cursor: pointer;
+
+      & svg {
+        enable-background: new 0 0 512 512;
+        width: 2rem;
+        height: 2rem;
+      }
 
       &:hover {
         color: ${({ theme }) => theme.colorGray};

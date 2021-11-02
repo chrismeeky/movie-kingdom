@@ -25,6 +25,7 @@ export const StyledHeader = styled.header`
 
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
       font-size: calc(1.2rem + 2.6vw);
+      margin: 0 2rem;
     }
   }
 `;

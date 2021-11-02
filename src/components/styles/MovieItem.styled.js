@@ -13,6 +13,10 @@ export const StyledMovieItem = styled.div`
   overflow: hidden;
   max-width: 100%;
 
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+    border-radius: 0.7rem;
+  }
+
   & img {
     min-height: 30vw;
     width: 100%;
@@ -55,7 +59,7 @@ export const StyledMovieItem = styled.div`
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
       position: unset;
       box-shadow: none;
-      padding: 0.5rem;
+      padding: 0.7rem;
     }
 
     & svg {
