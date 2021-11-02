@@ -59,7 +59,7 @@ export const StyledMovieItem = styled.div`
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
       position: unset;
       box-shadow: none;
-      padding: 0.7rem;
+      padding: 1.2rem;
     }
 
     & svg {

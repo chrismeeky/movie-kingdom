@@ -27,7 +27,10 @@ const MovieItem = ({
           onMovieSelect(movie);
         }}
       >
-        <figure className="movie-options">
+        <figure
+          className="movie-options"
+          onClick={(event) => event.stopPropagation()}
+        >
           <span>{vote_count} votes</span>
           <svg
             version="1"
