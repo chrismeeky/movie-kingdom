@@ -1,3 +1,12 @@
+# TECHNOLOGIES
+
+- REACT
+- Styled Components
+- Redux and Redux Toolkit. Create slice utility of @reduxjs/toolkit was used for generating reducers, action types and dispatch methods. CreateApi utility of @reduxjs/toolkit was used for handling async calls and data caching.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
